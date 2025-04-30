@@ -69,20 +69,8 @@
             }
         });
 
-        let isChatVisible = false;
-        let isChatInitialized = false;
-
-        window.addEventListener('load', () => {
-            cozeWebSDK.init().then(() => {
-                isChatInitialized = true;
-            });
-        });
-
+        isChatVisible = false;
         function toggleChat() {
-            if (!isChatInitialized) {
-                console.warn("Chat chưa khởi tạo xong!");
-                return;
-            }
             if (isChatVisible) {
                 cozeWebSDK.hideChatBot();
             } else {
